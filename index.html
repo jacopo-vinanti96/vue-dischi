@@ -15,7 +15,7 @@
     <div class="actions">
       <span class="text--action">Filter by genre:</span>
       <select class="filter-genre" name="filter-genre">
-        <option v-for="( album, i ) in albums" v-if="" value=""></option>
+        <option v-for="genre in genres" :value="genre"></option>
       </select>
     </div>
   </header>

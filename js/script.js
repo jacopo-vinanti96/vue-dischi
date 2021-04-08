@@ -9,14 +9,25 @@ const app = new Vue ({
   el: '#main-app',
   data: {
     albums: [],
+    genres: [],
   },
   methods: {
     getAlbums() {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music')
       .then( (arr) => {
         this.albums = arr.data.response;
-      })
-    }
+        this.removeDupes();
+        this.$forceUpdate();
+      });
+    },
+
+    removeDupes() {
+      this.albums.forEach( (item) => {
+        if ( this.genres.includes(item.genre) == false ) {
+          this.genres.push(item.genre);
+        }
+      });
+    },
   },
   mounted() {
     this.getAlbums();
