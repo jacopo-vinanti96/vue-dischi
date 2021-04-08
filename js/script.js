@@ -18,6 +18,18 @@ const app = new Vue ({
       .then( (arr) => {
         this.albums = arr.data.response;
         this.removeDupesGenre();
+        this.albums.sort( function ( alb1, alb2 ) {
+          if ( alb2.year - alb1.year == 0 ) {
+            if ( alb1.title < alb2.title ) {
+              return -1;
+            } else if ( alb1.title > alb2.title ) {
+              return 1;
+            } else {
+              return 0;
+            }
+          }
+          return alb2.year - alb1.year;
+        })
       });
     },
 
