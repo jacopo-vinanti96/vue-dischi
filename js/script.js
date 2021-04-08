@@ -10,18 +10,18 @@ const app = new Vue ({
   data: {
     albums: [],
     genres: [],
+    filterGenre: 'All',
   },
   methods: {
     getAlbums() {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music')
       .then( (arr) => {
         this.albums = arr.data.response;
-        this.removeDupes();
-        this.$forceUpdate();
+        this.removeDupesGenre();
       });
     },
 
-    removeDupes() {
+    removeDupesGenre() {
       this.albums.forEach( (item) => {
         if ( this.genres.includes(item.genre) == false ) {
           this.genres.push(item.genre);

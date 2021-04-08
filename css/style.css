@@ -28,7 +28,7 @@
 }
 
 /* Body */
-body {
+#main-app {
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -44,8 +44,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   color: white;
+  width: 100%;
 }
 
 .logo {
@@ -63,6 +63,7 @@ main {
   color: #F3DFA2;
   overflow-y: auto;
   height: calc(100% - 65px);
+  width: 100%;
 }
 
 .album-card {

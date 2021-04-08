@@ -10,24 +10,27 @@
   <title>Albums</title>
 </head>
 <body>
-  <header>
-    <img class="logo" src="img/logo.png" alt="spotify-logo">
-    <div class="actions">
-      <span class="text--action">Filter by genre:</span>
-      <select class="filter-genre" name="filter-genre">
-        <option v-for="genre in genres" :value="genre"></option>
-      </select>
-    </div>
-  </header>
-  <main id="main-app">
-    <div v-for="album in albums" class="album-card">
-      <img class="img--album" :src="album.poster" alt="album.title">
-      <span class="text text--album-title">{{album.title}}</span>
-      <span class="text text--author">{{album.author}}</span>
-      <span class="text text--genre">{{album.genre}}</span>
-      <span class="text text--year">{{album.year}}</span>
-    </div>
-  </main>
+  <div id="main-app">
+    <header>
+      <img class="logo" src="img/logo.png" alt="spotify-logo">
+      <div class="actions">
+        <span class="text--action">Filter by genre:</span>
+        <select class="filter-genre" name="filter-genre" v-model="filterGenre">
+          <option value="All">All</option>
+          <option v-for="genre in genres" :key="genre" :value="genre">{{ genre }}</option>
+        </select>
+      </div>
+    </header>
+    <main >
+      <div v-if="filterGenre == album.genre || filterGenre == 'All'" v-for="album in albums" class="album-card">
+        <img class="img--album" :src="album.poster" alt="album.title">
+        <span class="text text--album-title">{{album.title}}</span>
+        <span class="text text--author">{{album.author}}</span>
+        <span class="text text--genre">{{album.genre}}</span>
+        <span class="text text--year">{{album.year}}</span>
+      </div>
+    </main>
+  </div>
 
   <script src="js/script.js" charset="utf-8"></script>
 </body>
