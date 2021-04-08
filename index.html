@@ -10,6 +10,15 @@
   <title>Albums</title>
 </head>
 <body>
+  <header>
+    <img class="logo" src="img/logo.png" alt="spotify-logo">
+    <div class="actions">
+      <span class="text--action">Filter by genre:</span>
+      <select class="filter-genre" name="filter-genre">
+        <option v-for="( album, i ) in albums" v-if="" value=""></option>
+      </select>
+    </div>
+  </header>
   <main id="main-app">
     <div v-for="album in albums" class="album-card">
       <img class="img--album" :src="album.poster" alt="album.title">

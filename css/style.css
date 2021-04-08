@@ -12,6 +12,10 @@
   box-shadow: 0 0 8px black;
 }
 
+.text--action {
+  margin-right: 8px;
+}
+
 .text--album-title,
 .text--author {
   font-size: 20px;
@@ -25,20 +29,40 @@
 
 /* Body */
 body {
-  background-color: black;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Header */
+header {
+  background-color: #1E2D3B;
+  box-shadow: 0 3px 20px black;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: white;
+}
+
+.logo {
+  width: 45px;
 }
 
 /* Main */
 main {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 60px 60px 30px;
   background-color: #4B4E6D;
   color: #F3DFA2;
-  width: 1200px;
-  margin: auto;
+  overflow-y: auto;
+  height: calc(100% - 65px);
 }
 
 .album-card {
@@ -49,7 +73,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 8px black;
   width: 200px;
-  margin-bottom: 30px;
+  margin: 0 20px 30px;
 }
 
 .album-card .text {
