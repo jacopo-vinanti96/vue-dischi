@@ -1,0 +1,61 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Mix */
+.img--album {
+  height: 120px;
+  align-self: center;
+  box-shadow: 0 0 8px black;
+}
+
+.text--album-title,
+.text--author {
+  font-size: 20px;
+}
+
+.text--genre,
+.text--year {
+  font-size: 17px;
+  color: lightgrey;
+}
+
+/* Body */
+body {
+  background-color: black;
+}
+
+/* Main */
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 60px 60px 30px;
+  background-color: #4B4E6D;
+  color: #F3DFA2;
+  width: 1200px;
+  margin: auto;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #792315;
+  padding: 20px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px black;
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.album-card .text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 5px;
+  border-bottom: 1px dashed #5f5f5f;
+}
