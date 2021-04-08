@@ -20,12 +20,12 @@ const app = new Vue ({
         this.removeDupesGenre();
         this.albums.sort( function ( alb1, alb2 ) {
           if ( alb2.year - alb1.year == 0 ) {
-            if ( alb1.title < alb2.title ) {
+            let tempArr = [ alb1.title, alb2.title ];
+            tempArr.sort();
+            if ( alb1.title == tempArr[0] ) {
               return -1;
-            } else if ( alb1.title > alb2.title ) {
-              return 1;
             } else {
-              return 0;
+              return 1;
             }
           }
           return alb2.year - alb1.year;
